@@ -1,0 +1,4 @@
+-- View Table column list.
+SELECT column_name, column_comment
+FROM information_schema.columns
+WHERE table_name = 'Table Name' AND table_schema = 'Table Schema';
