@@ -1,0 +1,30 @@
+-- View oracle dual table style
+SELECT dateadd(dd, 0, DATEDIFF(dd, 0, getdate())) CNT
+FROM (SELECT '1' AS DUAL) a
+
+-- View Job list
+SELECT *
+FROM msdb.dbo.sysjobs
+WHERE job_id = 'job_id';
+
+-- Modify Job comment
+UPDATE msdb.dbo.sysjobs SET description = '딱지 클래스 상태 변경'
+WHERE job_id = 'job_id';
+
+-- View Table List
+SELECT *
+FROM information_schema.tables
+WHERE table_name='table name';
+
+-- View Column List
+SELECT *
+FROM information_schema.columns
+WHERE table_name = 'table name';
+
+-- View table comment
+SELECT OBJTYPE, OBJNAME, NAME, VALUE
+FROM ::FN_LISTEXTENDEDPROPERTY (NULL, 'SCHEMA', 'DBO', 'TABLE', 'table name', DEFAULT, DEFAULT)
+
+-- View column comment
+SELECT OBJTYPE, OBJNAME, NAME, VALUE
+FROM ::FN_LISTEXTENDEDPROPERTY(NULL, 'SCHEMA', 'DBO', 'TABLE', 'table name', 'COLUMN', DEFAULT)
