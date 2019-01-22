@@ -1,0 +1,20 @@
+public function excelDownload_function()
+{
+    header( "Content-type: application/vnd.ms-excel" );
+    header( "Content-type: application/vnd.ms-excel; charset=utf-8");
+    header( "Content-Disposition: attachment; filename = User_Statistics_Class.xls" );
+    header( "Content-Description: PHP4 Generated Data" ); 
+
+    dbquery and db data get.
+    Example)
+        $this->db->select()->from('testDB');
+	$result = $this->db->get()->result();
+    
+    $excel_str = "<table border='1'>";
+    $excel_str .= "<tr> <th>rowNumber<th/> <th>data_1</th> </tr>";
+    $excel_str .= "<tr> <td>". db rownumber info ."</td> <td>". db data_1 ."</td> </tr>";
+    $excel_str .= "</table>";
+
+    echo "<meta content=\"application/vnd.ms-excel; charset=UTF-8\" name=\"Content-type\"> ";
+    echo $EXCEL_STR;
+}
