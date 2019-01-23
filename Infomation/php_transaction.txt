@@ -1,0 +1,21 @@
+// transaction 시작.
+$this->db->trans_begin();
+
+// execute query.
+// example
+$this->db->insert('testDB Table', $data);
+
+// $data configuration example.
+// $data = array('test' => 'testData');
+
+// transaction 결과 검사.
+if($this->db->trans_status() === FALSE)
+{
+    // 쿼리 수행 실패 시 rollback
+    $this->db->trans_rollback();
+}
+else
+{
+    // 쿼리 수행 성공 시 commit.
+    $this->db->trans_commit();
+}
