@@ -1,0 +1,2 @@
+unpack - tar.gz
+   tar -xzf rebol.tar.gz
