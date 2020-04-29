@@ -1,0 +1,4 @@
+Directory Permission
+find . -type d -exec chmod 755 {} \;
+File Permission
+find . -type f -exec chmod 644 {} \;
